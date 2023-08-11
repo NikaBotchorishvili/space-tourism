@@ -1,12 +1,15 @@
 type Props = {
 	children: React.ReactNode;
 	bgClasses: string;
+	responsiveClasses?: string;
 };
 
-function MainOverlay({ children, bgClasses }: Props) {
+function MainOverlay({ children, bgClasses, responsiveClasses }: Props) {
 	return (
 		<main
-			className={`${bgClasses} bg-no-repeat bg-cover bg-center w-screen h-screen items-end flex  overflow-x-hidden`}
+			className={`${bgClasses} ${
+				responsiveClasses && responsiveClasses
+			}  bg-cover bg-center  w-screen min-h-screen  flex  overflow-x-hidden`}
 		>
 			{children}
 		</main>

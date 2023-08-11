@@ -7,7 +7,7 @@ function Header() {
 	const [toggled, setToggled] = useState(false);
 
 	return (
-		<header className="fixed top-10 sm:top-0 flex items-center justify-between w-full md:top-10 ">
+		<header className="fixed top-10 sm:top-0 z-50 flex items-center justify-between w-full md:top-10 ">
 			<Image
 				className="ml-8 md:ml-12"
 				height={20}

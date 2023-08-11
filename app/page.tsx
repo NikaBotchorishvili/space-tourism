@@ -3,7 +3,7 @@ import MainOverlay from "@/components/common/MainOverlay";
 export default function Home() {
 	return (
 		<MainOverlay bgClasses="md:desktop-home-bg sm:tablet-home-bg mobile-home-bg">
-			<section className="flex md:items-end h-[95%] md:text-left text-center md:h-[90%] md:justify-between w-10/12 mx-auto md:flex-row flex-col justify-end items-center md:gap-y-0 gap-y-10">
+			<section className="flex md:items-end pb-10 md:text-left text-center md:h-[90%] md:justify-between w-10/12 mx-auto md:flex-row flex-col justify-end items-center md:gap-y-0 gap-y-10">
 				<div className="max-w-[400px] flex flex-col gap-y-8">
 					<h2 className="text-3xl font-normal font-barlow text-secondary">
 						SO, YOU WANT TO TRAVEL TO
@@ -18,7 +18,7 @@ export default function Home() {
 					</p>
 				</div>
 				<div>
-					<button className="relative z-[-10] bg-white text-2xl font-bellefair p-16 flex items-center justify-center w-[200px] h-[200px] text-main rounded-full">
+					<button className="relative z-10 bg-white text-2xl font-bellefair p-16 flex items-center justify-center w-[200px] h-[200px] text-main rounded-full">
 						EXPLORE
 					</button>
 				</div>

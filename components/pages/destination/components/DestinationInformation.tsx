@@ -13,7 +13,7 @@ function DestinationInformation() {
 				</p>
 			</div>
 
-			<div className="flex justify-center gap-x-16">
+			<div className="flex flex-col mb-[50px] gap-y-10 sm:flex-row justify-center gap-x-16">
 				<h3 className="flex flex-col gap-y-3">
 					<span className="text-xl text-secondary font-barlow">
 						AVG. DISTANCE

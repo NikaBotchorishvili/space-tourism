@@ -12,10 +12,10 @@ function Navigation({ toggled, setToggled }: Props) {
 	const width = useWidth();
 	const variants = {
 		initial: {
-			right: -300,
+			right: -400,
 		},
 		animate: {
-			right: toggled ? 0 : -300,
+			right: toggled ? 0 : -400,
 			transition: {
 				duration: 0.3,
 				ease: "easeInOut",
@@ -23,9 +23,9 @@ function Navigation({ toggled, setToggled }: Props) {
 		},
 	};
     
-	return width > 768 ? (
+	return width > 640 ? (
 		<nav
-			className={`w-[250px] sm:w-fit fixed z-[50] top-0 right-0 h-screen sm:h-fit md:static bg-secondary  box-content bg-opacity-10 backdrop-blur-[10px] py-5 sm:px-5 md:px-20 sm:flex`}
+			className={`w-[300px] sm:w-fit fixed z-[50] top-0 right-0 h-screen sm:h-fit md:static bg-secondary  box-content bg-opacity-10 backdrop-blur-[10px] py-5 sm:px-5 md:px-20 sm:flex`}
 		>
 			<Image
 				src="shared/icon-close.svg"
@@ -55,7 +55,7 @@ function Navigation({ toggled, setToggled }: Props) {
 			variants={variants}
 			animate="animate"
 			initial="initial"
-			className={`w-[250px] sm:w-fit fixed z-[50] top-0 right-0 h-screen sm:h-fit md:static bg-secondary  box-content bg-opacity-10 backdrop-blur-[10px] py-5 sm:px-5 md:px-20 sm:flex`}
+			className={`w-[310px] sm:w-fit fixed z-[50] top-0 right-0 h-screen sm:h-fit md:static bg-secondary  box-content bg-opacity-10 backdrop-blur-[10px] py-5 sm:px-5 md:px-20 sm:flex`}
 		>
 			<Image
 				src="shared/icon-close.svg"
@@ -65,7 +65,7 @@ function Navigation({ toggled, setToggled }: Props) {
 				className="absolute right-8 top-10 sm:hidden block h-[20px]"
 				onClick={() => setToggled(false)}
 			/>
-			<ul className="flex gap-y-10 ml-10 sm:mt-0 mt-20 sm:mt- w-full h-full flex-col sm:flex-row md md:relative gap-x-12 font-barlow">
+			<ul className="flex gap-y-10 ml-16 sm:mt-0 mt-28 sm:mt- w-full h-full flex-col sm:flex-row md md:relative gap-x-12 font-barlow">
 				<NavItem title="HOME" numeration="00" path="/" />
 				<NavItem
 					title="DESTINATION"
