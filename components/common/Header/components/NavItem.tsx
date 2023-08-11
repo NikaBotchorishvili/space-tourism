@@ -9,6 +9,7 @@ type Props = {
 
 function NavItem({path, title, numeration}: Props) {
 	const pathname = usePathname();
+	console.log(pathname == path)
 	return (
 		<li>
 			<Link
@@ -20,8 +21,8 @@ function NavItem({path, title, numeration}: Props) {
 					<h2>{title}</h2>
 				</div>
 				<div
-					className={`absolute -bottom-5 w-full h-[1px] opacity-0 bg-white peer-hover:opacity-100 sm:${
-						pathname == path ? "opacity-100" : ""
+					className={`absolute -bottom-5 w-full h-[1px] opacity-0 bg-white peer-hover:opacity-100 ${
+						pathname == path ? "sm:opacity-100" : ""
 					}`}
 				></div>
 			</Link>
