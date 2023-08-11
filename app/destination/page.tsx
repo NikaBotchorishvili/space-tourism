@@ -5,6 +5,7 @@ import DestinationInformation from "@/components/pages/destination/components/De
 import Navigation from "@/components/pages/destination/components/Navigation";
 import { useSearchParams } from "next/navigation";
 import data from "@/libs/data";
+import { motion } from "framer-motion";
 
 function Destination() {
 	const searchParams = useSearchParams();
@@ -15,9 +16,15 @@ function Destination() {
 	const destinationInfo = data.destinations.find(
 		(destination) => destination.name == nameParam
 	);
-	if(!nameParam) {
-		throw new Error("no name")
+
+	if (!nameParam) {
+		throw new Error("no name");
 	}
+
+	const imageAnimationVariants = {
+		initial: { opacity: 0 },
+		animate: { opacity: 1, transition: { delay: 0.1 } },
+	};
 	return (
 		<MainOverlay
 			bgClasses="md:desktop-destination-bg sm:tablet-destination-bg mobile-destination-bg"
@@ -30,21 +37,36 @@ function Destination() {
 						<span>Pick Your Destination</span>
 					</h1>
 				</div>
-				<Image
-					src="/destination/image-moon.png"
-					className="md:hidden md:mx-0 mx-auto block sm:w-[250px] w-[170px] "
-					width={300}
-					height={300}
-					alt="planet"
-				/>
-				<div className="flex flex-col items-center justify-between w-full md:flex-row">
+				<motion.div
+				className="md:mx-0 mx-auto"
+					key={destinationInfo!.name}
+					variants={imageAnimationVariants}
+					initial="initial"
+					animate="animate"
+				>
 					<Image
 						src={destinationInfo!.images.png}
-						className="md:block hidden w-[350px]"
+						className="md:hidden  block sm:w-[250px] w-[170px] "
 						width={300}
 						height={300}
 						alt="planet"
 					/>
+				</motion.div>
+				<div className="flex flex-col items-center justify-between w-full md:flex-row">
+					<motion.div
+						key={destinationInfo!.name}
+						variants={imageAnimationVariants}
+						initial="initial"
+						animate="animate"
+					>
+						<Image
+							src={destinationInfo!.images.png}
+							className="md:block hidden w-[350px]"
+							width={300}
+							height={300}
+							alt="planet"
+						/>
+					</motion.div>
 
 					<div className="flex flex-col items-center md:items-start gap-y-10">
 						<Navigation name={destinationInfo!.name} />
