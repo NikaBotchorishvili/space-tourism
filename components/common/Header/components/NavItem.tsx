@@ -9,7 +9,6 @@ type Props = {
 
 function NavItem({path, title, numeration}: Props) {
 	const pathname = usePathname();
-	console.log(pathname == path)
 	return (
 		<li>
 			<Link
