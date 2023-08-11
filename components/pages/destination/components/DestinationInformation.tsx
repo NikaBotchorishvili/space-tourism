@@ -1,6 +1,11 @@
+"use client"
 
+type Props = {
+	nameParam: string
+}
 
-function DestinationInformation() {
+function DestinationInformation({nameParam}: Props) {
+	console.log(nameParam)
 	return (
 		<>
 			<div className="flex flex-col pb-10 border-b border-b-white md:w-fit w-[70vw] items-center ">
