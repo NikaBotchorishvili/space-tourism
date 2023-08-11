@@ -8,13 +8,16 @@ import data from "@/libs/data";
 
 function Destination() {
 	const searchParams = useSearchParams();
+
 	const nameParam = !searchParams.get("name")
 		? "Moon"
 		: searchParams.get("name");
 	const destinationInfo = data.destinations.find(
 		(destination) => destination.name == nameParam
 	);
-
+	if(!nameParam) {
+		throw new Error("no name")
+	}
 	return (
 		<MainOverlay
 			bgClasses="md:desktop-destination-bg sm:tablet-destination-bg mobile-destination-bg"
