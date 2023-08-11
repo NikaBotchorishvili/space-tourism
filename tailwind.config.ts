@@ -10,7 +10,13 @@ const config: Config = {
 		colors: {
 			main: "#0B0D17",
 			secondary: "#D0D6F9",
+			transSecondary: "hsla(64%,77%,90%,0.9)",
+			addonSecondary: "#979797",
 			white: "#FFFFFF",
+		},
+		fontFamily: {
+			barlow: "var(--barlow)",
+			bellefair: "var(--bellefair)",
 		},
 		extend: {
 			backgroundImage: {
