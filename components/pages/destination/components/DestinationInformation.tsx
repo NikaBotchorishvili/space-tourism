@@ -1,20 +1,36 @@
-"use client"
+"use client";
+
+// {
+// 	"name": "Moon",
+// 	"images": {
+// 	  "png": "/destination/image-moon.png",
+// 	  "webp": "./assets/destination/image-moon.webp"
+// 	},
+// 	"description": "See our planet as you've never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you're there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.",
+// 	"distance": "384,400 km",
+// 	"travel": "3 days"
+//   }
 
 type Props = {
-	nameParam: string
-}
-
-function DestinationInformation({nameParam}: Props) {
-	console.log(nameParam)
+	name: string;
+	description: string;
+	distance: string;
+	travel: string;
+};
+function DestinationInformation({
+	name,
+	description,
+	distance,
+	travel,
+}: Props) {
 	return (
 		<>
 			<div className="flex flex-col pb-10 border-b border-b-white md:w-fit w-[70vw] items-center ">
-				<h1 className="tracking-wider text-8xl font-bellefair">MOON</h1>
+				<h1 className="tracking-wider text-8xl font-bellefair">
+					{name.toUpperCase()}
+				</h1>
 				<p className="text-lg md:text-sm md:max-w-xs text-secondary font-barlow md:text-md">
-					See our planet as you've never seen it before. A perfect
-					relaxing trip away to help regain perspective and come back
-					refreshed. While you're there, take in some history by
-					visiting the Luna 2 and Apollo 11 landing sites.
+					{description}
 				</p>
 			</div>
 
@@ -23,13 +39,13 @@ function DestinationInformation({nameParam}: Props) {
 					<span className="text-xl text-secondary font-barlow">
 						AVG. DISTANCE
 					</span>
-					<span className="text-2xl font-bellefair">384,400 KM</span>
+					<span className="text-2xl font-bellefair">{distance}</span>
 				</h3>
 				<h3 className="flex flex-col gap-y-3">
 					<span className="text-xl text-secondary font-barlow">
 						EST. TRAVEL TIME
 					</span>
-					<span className="text-2xl font-bellefair">3 DAYS</span>
+					<span className="text-2xl font-bellefair">{travel}</span>
 				</h3>
 			</div>
 		</>

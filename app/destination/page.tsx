@@ -4,10 +4,17 @@ import MainOverlay from "@/components/common/MainOverlay";
 import DestinationInformation from "@/components/pages/destination/components/DestinationInformation";
 import Navigation from "@/components/pages/destination/components/Navigation";
 import { useSearchParams } from "next/navigation";
+import data from "@/libs/data";
 
 function Destination() {
 	const searchParams = useSearchParams();
-	const nameParam = searchParams.get("name");
+	const nameParam = !searchParams.get("name")
+		? "Moon"
+		: searchParams.get("name");
+	const destinationInfo = data.destinations.find(
+		(destination) => destination.name == nameParam
+	);
+
 	return (
 		<MainOverlay
 			bgClasses="md:desktop-destination-bg sm:tablet-destination-bg mobile-destination-bg"
@@ -29,17 +36,20 @@ function Destination() {
 				/>
 				<div className="flex flex-col items-center justify-between w-full md:flex-row">
 					<Image
-						src="/destination/image-moon.png"
-						className="md:block hidden w-[350px]  "
+						src={destinationInfo!.images.png}
+						className="md:block hidden w-[350px]"
 						width={300}
 						height={300}
 						alt="planet"
 					/>
 
 					<div className="flex flex-col items-center md:items-start gap-y-10">
-						<Navigation />
+						<Navigation name={destinationInfo!.name} />
 						<DestinationInformation
-							nameParam={!nameParam ? "Moon" : nameParam}
+							name={destinationInfo!.name}
+							travel={destinationInfo!.travel}
+							distance={destinationInfo!.distance}
+							description={destinationInfo!.description}
 						/>
 					</div>
 				</div>
