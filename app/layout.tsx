@@ -2,7 +2,6 @@
 
 import SplashScreen from "@/components/SplashScreen";
 import "./globals.css";
-import type { Metadata } from "next";
 import { Bellefair, Barlow_Condensed } from "next/font/google";
 import { useState } from "react";
 import Header from "@/components/common/Header";
@@ -17,10 +16,6 @@ const barlowCondensed = Barlow_Condensed({
 	weight: ["400"],
 	variable: "--barlow",
 });
-export const metadata: Metadata = {
-	title: "Space Tourism",
-	description: "Created By Nika Botchorishvili",
-};
 
 export default function RootLayout({
 	children,
@@ -31,6 +26,10 @@ export default function RootLayout({
 	const [loading, setLoading] = useState(true);
 	return (
 		<html lang="en">
+			<head>
+				<title>Space Tourism</title>
+				<meta name="description" content="Created by nika botchorishvili" />
+			</head>
 			<body
 				className={`${barlowCondensed.variable} + ${bellefair.variable} text-white`}
 			>
