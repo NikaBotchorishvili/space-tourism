@@ -1,3 +1,4 @@
+"use client"
 import { CircleLoader } from "react-spinners";
 function Loader() {
     return (
