@@ -36,7 +36,7 @@ function SplashScreen({ setLoading }: Props) {
 				scope.current,
 				rocketAnimationVariant.animate,
 				{
-					duration: 4,
+					duration: 2,
 					delay: delayMultiplier * 5,
 				}
 			);

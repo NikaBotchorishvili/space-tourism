@@ -23,7 +23,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	// Switch this back to true
-	const [loading, setLoading] = useState(true);
+	const [loading, setLoading] = useState(false);
 	return (
 		<html lang="en">
 			<head>
@@ -31,7 +31,7 @@ export default function RootLayout({
 				<meta name="description" content="Created by nika botchorishvili" />
 			</head>
 			<body
-				className={`${barlowCondensed.variable} + ${bellefair.variable} text-white`}
+				className={`${barlowCondensed.variable} + ${bellefair.variable} text-white overflow-x-hidden`}
 			>
 				{loading ? (
 					<SplashScreen setLoading={setLoading} />

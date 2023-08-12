@@ -49,7 +49,7 @@ export default {
 		{
 			name: "Douglas Hurley",
 			images: {
-				png: "./assets/crew/image-douglas-hurley.png",
+				png: "/crew/image-douglas-hurley.png",
 				webp: "./assets/crew/image-douglas-hurley.webp",
 			},
 			role: "Commander",
@@ -58,7 +58,7 @@ export default {
 		{
 			name: "Mark Shuttleworth",
 			images: {
-				png: "./assets/crew/image-mark-shuttleworth.png",
+				png: "/crew/image-mark-shuttleworth.png",
 				webp: "./assets/crew/image-mark-shuttleworth.webp",
 			},
 			role: "Mission Specialist",
@@ -67,7 +67,7 @@ export default {
 		{
 			name: "Victor Glover",
 			images: {
-				png: "./assets/crew/image-victor-glover.png",
+				png: "/crew/image-victor-glover.png",
 				webp: "./assets/crew/image-victor-glover.webp",
 			},
 			role: "Pilot",
@@ -76,7 +76,7 @@ export default {
 		{
 			name: "Anousheh Ansari",
 			images: {
-				png: "./assets/crew/image-anousheh-ansari.png",
+				png: "/crew/image-anousheh-ansari.png",
 				webp: "./assets/crew/image-anousheh-ansari.webp",
 			},
 			role: "Flight Engineer",

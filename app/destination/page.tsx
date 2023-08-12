@@ -24,11 +24,12 @@ function Destination() {
 	const imageAnimationVariants = {
 		initial: { opacity: 0 },
 		animate: { opacity: 1, transition: { delay: 0.1 } },
+		exit: { opacity: 0, transition: { easing: "easeIn" } },
 	};
 	return (
 		<MainOverlay
 			bgClasses="md:desktop-destination-bg sm:tablet-destination-bg mobile-destination-bg"
-			responsiveClasses="items-end"
+			responsiveClasses="items-end "
 		>
 			<section className="flex flex-col mb-[15px] mt-[100px]  items-start justify-center md:text-left text-center  gap-y-4 md:gap-y-16 w-10/12 mx-auto">
 				<div className="max-w-[400px] flex flex-col  pt-90">
@@ -38,7 +39,7 @@ function Destination() {
 					</h1>
 				</div>
 				<motion.div
-				className="md:mx-0 mx-auto"
+					className="md:mx-0 mx-auto"
 					key={destinationInfo!.name}
 					variants={imageAnimationVariants}
 					initial="initial"
@@ -52,12 +53,13 @@ function Destination() {
 						alt="planet"
 					/>
 				</motion.div>
-				<div className="flex flex-col items-center justify-between w-full md:flex-row">
+				<div className="flex flex-col items-center justify-between w-full md:flex-row ">
 					<motion.div
 						key={destinationInfo!.name}
 						variants={imageAnimationVariants}
 						initial="initial"
 						animate="animate"
+						exit="exit"
 					>
 						<Image
 							src={destinationInfo!.images.png}
@@ -68,7 +70,7 @@ function Destination() {
 						/>
 					</motion.div>
 
-					<div className="flex flex-col items-center md:items-start gap-y-10">
+					<div className="flex flex-col items-center md:items-start gap-y-10 overflow-hidden">
 						<Navigation name={destinationInfo!.name} />
 						<DestinationInformation
 							name={destinationInfo!.name}

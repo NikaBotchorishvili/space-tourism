@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 type Props = {
 	name: string;
@@ -15,14 +15,18 @@ function DestinationInformation({
 	travel,
 }: Props) {
 	return (
-		<>
+		<AnimatePresence>
 			<motion.div
 				className="relative"
 				key={name}
-				initial={{ right: -300, opacity: 0}}
-				animate={{ right: 0, opacity: 1, transition: {
-					type: "spring"
-				}}}
+				initial={{ right: -300, opacity: 0 }}
+				animate={{
+					right: 0,
+					opacity: 1,
+					transition: {
+						type: "spring",
+					},
+				}}
 			>
 				<div className="flex flex-col pb-10 border-b border-b-white md:w-fit w-[70vw] items-center ">
 					<h1 className="tracking-wider text-8xl font-bellefair">
@@ -52,7 +56,7 @@ function DestinationInformation({
 					</h3>
 				</div>
 			</motion.div>
-		</>
+		</AnimatePresence>
 	);
 }
 

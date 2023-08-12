@@ -1,3 +1,5 @@
+import { Suspense } from "react";
+
 type Props = {
 	children: React.ReactNode;
 	bgClasses: string;
