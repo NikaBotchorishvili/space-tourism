@@ -17,14 +17,13 @@ function Crew() {
 		? "Douglas Hurley"
 		: searchParams.get("member");
 	const memberInfo = data.crew.find((member) => member.name == memberParam);
-	console.log(memberInfo);
 	if (!memberParam) {
 		throw new Error("no name");
 	}
 	return (
 		<MainOverlay bgClasses="md:desktop-crew-bg sm:tablet-crew-bg mobile-crew-bg">
-			<section className="flex flex-col  md:flex-row mb-[50px] mt-[150px]  items-center justify-center md:text-left text-center  gap-y-4 md:gap-y-16 md:justify-between w-10/12 mx-auto ">
-				<div className="">
+			<section className="flex md:flex-row  flex-col   mb-[50px] mt-[150px]  items-center justify-center md:text-left text-center  gap-y-4 md:gap-y-16 md:justify-between w-10/12 mx-auto ">
+				<div>
 					<div className="max-w-[400px] flex flex-col md:mb-20 pt-90">
 						<h1 className="flex text-2xl sm:gap-x-2 gap-x-6">
 							<span className="text-addonSecondary">02</span>
