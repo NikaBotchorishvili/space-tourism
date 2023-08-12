@@ -5,10 +5,12 @@ import CrewMemberInformation from "@/components/pages/crew/components/CrewMember
 import CrewMemberImage from "@/components/pages/crew/components/CrewMemberImage";
 import Navigation from "@/components/pages/crew/components/Navigation";
 import data from "@/libs/data";
+import useWidth from "@/libs/useWidth";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSearchParams } from "next/navigation";
 
 function Crew() {
+	const width = useWidth();
 	const searchParams = useSearchParams();
 
 	const memberParam = !searchParams.get("member")
@@ -29,40 +31,73 @@ function Crew() {
 							<span className="font-barlow">MEET YOUR CREW</span>
 						</h1>
 					</div>
-					<div className="flex flex-col sm:flex-col gap-y-6">
+
+					<div className="flex flex-col items-center md:items-start gap-y-6 mt-16">
+						{width < 640 && (
+							<div className="w-[350px] ">
+								<motion.div
+									className="flex overflow-x-hidden relative"
+									key={memberInfo!.name}
+									variants={{
+										initial: {
+											opacity: 0,
+											right: -400,
+										},
+										animate: {
+											opacity: 1,
+											right: 0,
+											transition: {
+												delay: 0.1,
+												ease: "easeInOut",
+											},
+										},
+									}}
+									animate="animate"
+									initial="initial"
+								>
+									<CrewMemberImage
+										src={memberInfo!.images.png}
+										name={memberInfo!.name}
+									/>
+								</motion.div>
+							</div>
+						)}
+						{width < 640 && <Navigation name={memberInfo!.name} />}
+
 						<CrewMemberInformation
 							name={memberInfo!.name}
 							bio={memberInfo!.bio}
 							role={memberInfo!.role}
 						/>
-						<Navigation name={memberInfo!.name} />
+						{width > 640 && <Navigation name={memberInfo!.name} />}
 					</div>
 				</div>
-
-				<div className="w-[350px] relative">
-					<motion.div
-						className="flex overflow-x-hidden relative"
-						key={memberInfo!.name}
-						variants={{
-							initial: { opacity: 0, right: -400 },
-							animate: {
-								opacity: 1,
-								right: 0,
-								transition: {
-									delay: 0.1,
-									ease: "easeInOut",
+				{width > 640 && (
+					<div className="w-[350px] ">
+						<motion.div
+							className="flex overflow-x-hidden relative"
+							key={memberInfo!.name}
+							variants={{
+								initial: { opacity: 0, right: -400 },
+								animate: {
+									opacity: 1,
+									right: 0,
+									transition: {
+										delay: 0.1,
+										ease: "easeInOut",
+									},
 								},
-							},
-						}}
-						animate="animate"
-						initial="initial"
-					>
-						<CrewMemberImage
-							src={memberInfo!.images.png}
-							name={memberInfo!.name}
-						/>
-					</motion.div>
-				</div>
+							}}
+							animate="animate"
+							initial="initial"
+						>
+							<CrewMemberImage
+								src={memberInfo!.images.png}
+								name={memberInfo!.name}
+							/>
+						</motion.div>
+					</div>
+				)}
 			</section>
 		</MainOverlay>
 	);

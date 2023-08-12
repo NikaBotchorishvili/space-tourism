@@ -70,7 +70,7 @@ function Destination() {
 						/>
 					</motion.div>
 
-					<div className="flex flex-col items-center md:items-start gap-y-10 overflow-hidden">
+					<div className="flex flex-col items-center md:items-start gap-y-10 ">
 						<Navigation name={destinationInfo!.name} />
 						<DestinationInformation
 							name={destinationInfo!.name}
