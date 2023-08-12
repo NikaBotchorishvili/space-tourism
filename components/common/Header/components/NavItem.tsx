@@ -14,6 +14,7 @@ function NavItem({path, title, numeration}: Props) {
 			<Link
 				className="relative flex flex-col items-center font-medium text-lg w-fit"
 				href={path}
+				prefetch={true}
 			>
 				<div className="flex text-xl sm:text-md gap-x-5 sm:gap-x-2 w-full peer">
 					<small>{numeration}</small>
