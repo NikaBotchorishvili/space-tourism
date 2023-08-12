@@ -6,7 +6,7 @@ import CrewMemberImage from "@/components/pages/crew/components/CrewMemberImage"
 import Navigation from "@/components/pages/crew/components/Navigation";
 import data from "@/libs/data";
 import useWidth from "@/libs/useWidth";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useSearchParams } from "next/navigation";
 
 function Crew() {
