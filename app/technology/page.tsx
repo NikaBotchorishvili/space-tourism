@@ -40,9 +40,9 @@ function Technology() {
 						<Image
 							src={`${width < 768? technologyInfo?.images.landscape: technologyInfo?.images.portrait}`}
 							width={400}
-							height={100}
+							height={500}
 							quality={100}
-							className="md:w-[400px] h-[190px] sm:h-[250px] w-full bg-secondary  "
+							className="md:w-[400px] w-full bg-secondary  "
 							alt="ben"
 						/>
 					</div>

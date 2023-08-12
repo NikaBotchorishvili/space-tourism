@@ -1,8 +1,8 @@
 "use client"
-
+ 
 import { useState, useEffect } from "react";
 function useWidth() {
-	const [width, setWidth] = useState(0);
+	const [width, setWidth] = useState(window.innerWidth);
 	function handleResize() {
 		setWidth(window.innerWidth);
 	}

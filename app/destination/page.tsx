@@ -5,7 +5,7 @@ import DestinationInformation from "@/components/pages/destination/components/De
 import Navigation from "@/components/pages/destination/components/Navigation";
 import { useSearchParams } from "next/navigation";
 import data from "@/libs/data";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 function Destination() {
 	const searchParams = useSearchParams();
@@ -24,7 +24,6 @@ function Destination() {
 	const imageAnimationVariants = {
 		initial: { opacity: 0 },
 		animate: { opacity: 1, transition: { delay: 0.1 } },
-		exit: { opacity: 0, transition: { easing: "easeIn" } },
 	};
 	return (
 		<MainOverlay
@@ -32,7 +31,7 @@ function Destination() {
 			responsiveClasses="items-end"
 		>
 			<section className="flex flex-col mb-[15px] mt-[100px]  items-start justify-center md:text-left text-center  gap-y-4 md:gap-y-16 w-10/12 mx-auto">
-				<div className="max-w-[400px] flex flex-col  pt-90">
+				<div className="max-w-[400px] flex flex-col  pt-90 overflow-y-hidden">
 					<h1 className="flex text-2xl sm:gap-x-2 gap-x-6">
 						<span className="text-addonSecondary">01</span>
 						<span>Pick Your Destination</span>
@@ -59,7 +58,6 @@ function Destination() {
 						variants={imageAnimationVariants}
 						initial="initial"
 						animate="animate"
-						exit="exit"
 					>
 						<Image
 							src={destinationInfo!.images.webp}

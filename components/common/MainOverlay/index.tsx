@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 
 type Props = {
 	children: React.ReactNode;
@@ -11,7 +10,7 @@ function MainOverlay({ children, bgClasses, responsiveClasses }: Props) {
 		<main
 			className={`${bgClasses} ${
 				responsiveClasses && responsiveClasses
-			}  bg-cover bg-center  w-screen min-h-screen  flex  overflow-x-hidden`}
+			}  bg-cover bg-center  w-screen min-h-screen  flex  overflow-hidden`}
 		>
 			{children}
 		</main>

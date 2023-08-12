@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 type Props = {
 	name: string;
@@ -15,7 +15,6 @@ function DestinationInformation({
 	travel,
 }: Props) {
 	return (
-		<AnimatePresence>
 			<motion.div
 				className="relative"
 				key={name}
@@ -56,7 +55,6 @@ function DestinationInformation({
 					</h3>
 				</div>
 			</motion.div>
-		</AnimatePresence>
 	);
 }
 
