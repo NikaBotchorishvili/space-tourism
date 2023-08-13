@@ -1,8 +1,10 @@
 import Link from "next/link";
 
 function Navigation({ name }: { name: string }) {
+
+
 	return (
-		<div className="flex gap-x-5  mx-auto md:mx-0 ">
+		<div className="flex gap-x-5  mx-auto md:mx-0 order-2 ">
 			<Link
 				href="crew?member=Douglas Hurley"
 				className={`w-[10px] md:w-[15px] aspect-square rounded-full ${

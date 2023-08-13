@@ -1,7 +1,7 @@
 import Image from "next/image";
 import NavItem from "./NavItem";
-import useWidth from "@/libs/useWidth";
 import { motion } from "framer-motion";
+import { useMediaQuery } from "@mui/material";
 
 type Props = {
 	toggled: boolean;
@@ -9,10 +9,10 @@ type Props = {
 };
 
 function Navigation({ toggled, setToggled }: Props) {
-	const width = useWidth();
+	const notMobileScreen = useMediaQuery("(min-width:640px)");
 	const variants = {
 		initial: {
-			right: -400,
+			right: -600,
 		},
 		animate: {
 			right: toggled ? 0 : -400,
@@ -22,19 +22,12 @@ function Navigation({ toggled, setToggled }: Props) {
 			},
 		},
 	};
-    
-	return width > 640 ? (
-		<nav
-			className={`w-[300px] sm:w-fit fixed z-[50] top-0 right-0 h-screen sm:h-fit md:static bg-secondary  box-content bg-opacity-10 backdrop-blur-[10px] py-5 sm:px-5 md:px-20 sm:flex`}
+	return notMobileScreen ? (
+		<motion.nav
+			initial={{ right: -600 }}
+			animate={{ right: 0 }}
+			className={`w-[300px] sm:w-fit relative  z-[50] h-screen sm:h-fit md:static bg-secondary  box-content bg-opacity-10 backdrop-blur-[10px] py-5 sm:px-5 md:px-20 sm:flex`}
 		>
-			<Image
-				src="shared/icon-close.svg"
-				alt="close"
-				width={20}
-				height={20}
-				className="absolute right-8 top-10 sm:hidden block h-[20px]"
-				onClick={() => setToggled(false)}
-			/>
 			<ul className="flex gap-y-10 ml-10 sm:mt-0 mt-20 sm:mt- w-full h-full flex-col sm:flex-row md md:relative gap-x-12 font-barlow">
 				<NavItem title="HOME" numeration="00" path="/" />
 				<NavItem
@@ -49,7 +42,7 @@ function Navigation({ toggled, setToggled }: Props) {
 					path="/technology"
 				/>
 			</ul>
-		</nav>
+		</motion.nav>
 	) : (
 		<motion.nav
 			variants={variants}

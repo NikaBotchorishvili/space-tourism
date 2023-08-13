@@ -1,14 +1,12 @@
 "use client";
+
 import MainOverlay from "@/components/common/MainOverlay";
 import Navigation from "@/components/pages/technology/components/Navigation";
 import TechnologyInformation from "@/components/pages/technology/components/TechnologyInformation";
 import data from "@/libs/data";
-import useWidth from "@/libs/useWidth";
-import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 
 function Technology() {
-	const width = useWidth();
 	const searchParams = useSearchParams();
 
 	const technologyName = !searchParams.get("name")
@@ -29,22 +27,16 @@ function Technology() {
 						<span>SPACE LAUNCH 101</span>
 					</h1>
 				</div>
-	
-
-				<div className="flex gap-y-10 md:gap-y-0 items-center flex-col-reverse sm:justify-center  md:flex-row md:justify-between w-full">
+				<div className="flex gap-y-10 md:gap-y-0  items-center flex-col-reverse sm:justify-center  md:flex-row md:justify-between w-full">
 					<div className="flex flex-col  md:flex-row gap-x-10">
 						<Navigation name={technologyInfo!.name} />
 						<TechnologyInformation name={technologyInfo!.name} description={technologyInfo!.description}/>
 					</div>
 					<div className="w-screen md:w-fit bg-main">
-						<Image
-							src={`${width < 768? technologyInfo?.images.landscape: technologyInfo?.images.portrait}`}
-							width={400}
-							height={500}
-							quality={100}
-							className="md:w-[400px] w-full bg-secondary  "
-							alt="ben"
-						/>
+					<picture>
+						<source media="(min-width: 768px)" srcSet={technologyInfo?.images.portrait}/>
+						<img className="w-screen md:w-[400px]" src={technologyInfo?.images.landscape} alt={technologyInfo?.name} />
+					</picture>
 					</div>
 				</div>
 			</section>
