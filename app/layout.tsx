@@ -23,7 +23,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	// Switch this back to true
-	const [loading, setLoading] = useState(false);
+	const [loading, setLoading] = useState(true);
 	return (
 		<html lang="en">
 			<head>

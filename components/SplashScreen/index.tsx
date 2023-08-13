@@ -36,7 +36,7 @@ function SplashScreen({ setLoading }: Props) {
 				scope.current,
 				rocketAnimationVariant.animate,
 				{
-					duration: 2,
+					duration: 1.5,
 					delay: delayMultiplier * 5,
 				}
 			);
@@ -44,7 +44,7 @@ function SplashScreen({ setLoading }: Props) {
 		animation().then(() => setLoading(false));
 	}, []);
 	return (
-		<main className="bg-main w-screen h-screen flex items-center justify-center ">
+		<main className="bg-main w-screen h-screen flex items-center justify-center overflow-auto">
 			<section className=" text-white  text-center flex flex-col gap-y-10">
 				<motion.h1
 					variants={slideAndFadeAnimationVariant}
