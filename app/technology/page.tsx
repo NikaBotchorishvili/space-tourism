@@ -4,6 +4,7 @@ import MainOverlay from "@/components/common/MainOverlay";
 import Navigation from "@/components/pages/technology/components/Navigation";
 import TechnologyInformation from "@/components/pages/technology/components/TechnologyInformation";
 import data from "@/libs/data";
+import { motion } from "framer-motion";
 import { useSearchParams } from "next/navigation";
 
 function Technology() {
@@ -33,10 +34,14 @@ function Technology() {
 						<TechnologyInformation name={technologyInfo!.name} description={technologyInfo!.description}/>
 					</div>
 					<div className="w-screen md:w-fit bg-main">
-					<picture>
+					<motion.picture
+						key={technologyInfo?.name}
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						>
 						<source media="(min-width: 768px)" srcSet={technologyInfo?.images.portrait}/>
 						<img className="w-screen md:w-[400px]" src={technologyInfo?.images.landscape} alt={technologyInfo?.name} />
-					</picture>
+					</motion.picture>
 					</div>
 				</div>
 			</section>
