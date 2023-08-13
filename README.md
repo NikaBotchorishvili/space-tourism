@@ -1,34 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Frontend Mentor - Space tourism website solution
 
-## Getting Started
+This is a solution to the [Space tourism website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-First, run the development server:
+## Table of contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+  - [Built with](#built-with)
+- [Author](#author)
+## Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### The challenge
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Users should be able to:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- View the optimal layout for each of the website's pages depending on their device's screen size
+- See hover states for all interactive elements on the page
+- View each page and be able to toggle between the tabs to see new information
 
-## Learn More
+### Screenshot
 
-To learn more about Next.js, take a look at the following resources:
+![image](https://github.com/NikaBotchorishvili/space-tourism/assets/58900787/83d4fcda-e3a6-4d94-adfb-414ac3d6b693)
+![image](https://github.com/NikaBotchorishvili/space-tourism/assets/58900787/1adda25d-95e6-4bce-a3cf-b27b8f5d4dd4)
+![image](https://github.com/NikaBotchorishvili/space-tourism/assets/58900787/377550bd-ce8c-4a46-8fbd-1b2a771b286d)
+![image](https://github.com/NikaBotchorishvili/space-tourism/assets/58900787/dd105947-000b-47b9-9074-482fa1fd9dc5)
+![image](https://github.com/NikaBotchorishvili/space-tourism/assets/58900787/d55f37d6-cfea-4ebf-89fe-e45b2d224ed6)
+![image](https://github.com/NikaBotchorishvili/space-tourism/assets/58900787/868e59b6-5fc3-44c9-a469-134243d78f81)
+![image](https://github.com/NikaBotchorishvili/space-tourism/assets/58900787/9f9d1f23-8194-43df-944a-efb3e87da44a)
+![image](https://github.com/NikaBotchorishvili/space-tourism/assets/58900787/45b1612b-d6b7-432f-8a77-808bee7a1c37)
+![image](https://github.com/NikaBotchorishvili/space-tourism/assets/58900787/98a235e5-7883-45a3-ab08-b5982d380da4)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Links
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Solution URL: [Solution](https://www.frontendmentor.io/solutions/responsive-space-tourism-multi-page-app-created-with-nextjs-WvnX3o6fbL)
+- Live Site URL: [Live](https://space-tourism-ten-blush.vercel.app/)
 
-## Deploy on Vercel
+### Built with
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- Mobile-first workflow
+- [TailwindCSS](https://tailwindcss.com/) - CSS framework
+- [React](https://reactjs.org/) - JS library
+- [Next.js](https://nextjs.org/) - React framework
+- [framer-motion](https://www.framer.com/motion/) - Animations library
+- [Typescript](https://www.typescriptlang.org/)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Author
+
+- Linkedin - [@Nika Botchorishvili](https://www.linkedin.com/in/nika-botchorishvili-a27b09234/)
+- Frontend Mentor - [@Nika Botchorishvili](https://www.frontendmentor.io/profile/NikaBotchorishvili)
