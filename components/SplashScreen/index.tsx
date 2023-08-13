@@ -44,7 +44,7 @@ function SplashScreen({ setLoading }: Props) {
 		animation().then(() => setLoading(false));
 	}, []);
 	return (
-		<main className="bg-main w-screen h-screen flex items-center justify-center overflow-auto">
+		<main className="bg-main w-screen h-screen flex items-center justify-center ">
 			<section className=" text-white  text-center flex flex-col gap-y-10">
 				<motion.h1
 					variants={slideAndFadeAnimationVariant}
@@ -88,7 +88,7 @@ function SplashScreen({ setLoading }: Props) {
 					</motion.p>
 				</div>
 				<motion.div
-					className="absolute overflow-hidden bottom-[100px] left-[50%] -translate-x-1/2"
+					className="absolute bottom-[100px] left-[50%] -translate-x-1/2"
 					ref={scope}
 				>
 					<Image src="/rocket.gif" width={100} height={50} alt="" />
