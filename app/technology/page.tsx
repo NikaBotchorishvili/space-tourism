@@ -31,17 +31,27 @@ function Technology() {
 				<div className="flex gap-y-10 md:gap-y-0  items-center flex-col-reverse sm:justify-center  md:flex-row md:justify-between w-full">
 					<div className="flex flex-col  md:flex-row gap-x-10">
 						<Navigation name={technologyInfo!.name} />
-						<TechnologyInformation name={technologyInfo!.name} description={technologyInfo!.description}/>
+						<TechnologyInformation
+							name={technologyInfo!.name}
+							description={technologyInfo!.description}
+						/>
 					</div>
 					<div className="w-screen md:w-fit bg-main">
-					<motion.picture
-						key={technologyInfo?.name}
-						initial={{ opacity: 0 }}
-						animate={{ opacity: 1 }}
+						<motion.picture
+							key={technologyInfo?.name}
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
 						>
-						<source media="(min-width: 768px)" srcSet={technologyInfo?.images.portrait}/>
-						<img className="w-screen md:w-[400px]" src={technologyInfo?.images.landscape} alt={technologyInfo?.name} />
-					</motion.picture>
+							<source
+								media="(min-width: 768px)"
+								srcSet={technologyInfo?.images.portrait}
+							/>
+							<img
+								className="w-screen md:w-[400px]"
+								src={technologyInfo?.images.landscape}
+								alt={technologyInfo?.name}
+							/>
+						</motion.picture>
 					</div>
 				</div>
 			</section>

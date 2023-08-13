@@ -1,6 +1,7 @@
 "use client";
 import MainOverlay from "@/components/common/MainOverlay";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const delayMultiplier = 0.2;
 
@@ -12,11 +13,10 @@ export default function Home() {
 			left: 0,
 			transition: {
 				delay: delayMultiplier * custom,
-				ease: "easeInOut"
+				ease: "easeInOut",
 			},
 		}),
 	};
-
 
 	return (
 		<MainOverlay
@@ -59,18 +59,21 @@ export default function Home() {
 					</motion.p>
 				</div>
 				<div>
-					<motion.button
+					<motion.div
 						variants={textAnimationVariant}
 						custom={4}
 						initial={{ opacity: 0 }}
-						animate={{ opacity: 1, transition: {
-							delay: delayMultiplier * 6,
-							
-						} }}
-						className="relative z-10 bg-white text-2xl font-bellefair p-16 flex items-center justify-center w-[200px] h-[200px] text-main rounded-full"
+						animate={{
+							opacity: 1,
+							transition: {
+								delay: delayMultiplier * 6,
+							},
+						}}
 					>
-						EXPLORE
-					</motion.button>
+						<Link href="/destination" className="relative z-10 bg-white text-2xl font-bellefair p-16 flex items-center justify-center w-[200px] h-[200px] text-main rounded-full after:content-[''] after:w-[200px] after:h-[200px] after:bg-white after:bg-opacity-30 after:transition-transform after:duration-[300ms] after:active:scale-125 after:rounded-full after:hover:scale-150 after:absolute">
+							EXPLORE
+						</Link>
+					</motion.div>
 				</div>
 			</section>
 		</MainOverlay>
